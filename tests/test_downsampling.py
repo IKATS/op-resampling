@@ -20,7 +20,7 @@ import unittest
 
 import numpy as np
 
-from ikats.algo.core.resampling.resampling_computation import downsampling_ts, LOGGER
+from ikats.algo.op-resampling.resampling_computation import downsampling_ts, LOGGER
 from ikats.core.resource.api import IkatsApi
 
 

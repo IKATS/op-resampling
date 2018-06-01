@@ -20,11 +20,11 @@ import unittest
 
 import numpy as np
 
-from ikats.algo.core.resampling import resampling_ts
+from ikats.algo.op-resampling import resampling_ts
 from ikats.core.resource.api import IkatsApi
 from ikats.core.resource.client.temporal_data_mgr import DTYPE
 
-LOGGER = logging.getLogger("ikats.algo.core.resampling")
+LOGGER = logging.getLogger("ikats.algo.op-resampling")
 # Log format
 LOGGER.setLevel(logging.DEBUG)
 FORMATTER = logging.Formatter('%(asctime)s:%(levelname)s:%(funcName)s:%(message)s')
