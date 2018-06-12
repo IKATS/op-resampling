@@ -9,7 +9,7 @@
     "name": "Resampling",
     "description": "Resamples, with the selected period, each Time series from the selected list. Input timeseries shall be periodic with the metadata 'qual_ref_period' present.",
     "algorithm": "Resampling",
-    "entry_point": "ikats.algo.core.resampling::resampling_ts",
+    "entry_point": "op-resampling::resampling_ts",
     "label": "Resampling TS",
     "inputs": [
       {

@@ -21,7 +21,7 @@ import unittest
 import numpy as np
 
 from ikats.core.resource.api import IkatsApi
-from ikats.algo.core.resampling.resampling_computation import resampling_ts, LOGGER
+from ikats.algo.resampling.resampling_computation import resampling_ts, LOGGER
 from ikats.core.resource.client.temporal_data_mgr import DTYPE
 
 
