@@ -466,7 +466,7 @@ def _resample(resampling_way,
         # in case last original point and last downsampled point are aligned => add a supplementary chunk to compute
         # last point
         if (interval_limits[-1] - sd) % resampling_period == 0:
-            data_to_compute.append((tsuid, func_id, 1, interval_limits[-1], interval_limits[-1] + resampling_period))
+            data_to_compute.append((tsuid, func_id, len(interval_limits) - 1, interval_limits[-1], interval_limits[-1] + resampling_period))
 
     LOGGER.info("Running resampling using Spark")
     # Create or get a spark Context
@@ -665,9 +665,9 @@ def _spark_upsample(data, period, args):
 
     adding_method = args
 
-    # No computation if data variable contains no elements to resample
-    if len(data) == 0:
-        return []
+    # No computation if data variable contains no element or only one element
+    if len(data) <= 1:
+        return data
 
     # First extract timestamps and values from original data
     ts_timestamps = data[:, 0].astype(int, copy=False)
